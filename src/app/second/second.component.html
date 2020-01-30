@@ -1,0 +1,91 @@
+<p><strong>Mat badge Example</strong></p>
+
+<div style = "align-self: center">
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">MatBadge</div>
+        <div class="card-body">
+          <h5 class="card-title">Notification Example</h5>
+          <p class="card-text">
+              <span matBadge = "5">Notification</span> <br>
+             
+              <span matBadge = "5" matBadgeOverlap = "false" >Notification without overlap</span><br>
+              
+              <span matBadge = "8" matBadgePosition = "above before" matBadgeOverlap = "false">Notification on the left top</span> <br>
+
+              <span matBadge = "8" matBadgePosition = "below before" matBadgeOverlap = "false">Notification on the left bottom</span> <br>
+
+              <span matBadge = "8" matBadgePosition = "above after" matBadgeOverlap = "false">Notification on the right top</span> <br>
+
+              <span matBadge = "8" matBadgePosition = "below after" matBadgeOverlap = "false">Notification on the right bottom</span> <br>
+            
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeSize = "small">Notification</span><br>
+
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeSize = "large">Notification</span><br>
+
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeSize = "medium">Notification</span><br>
+
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeColor = "primary">Notification</span><br>
+
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeColor = "accent">Notification</span><br>
+
+              <span matBadge = "5" matBadgeOverlap = "false" matBadgeColor = "warn">Notification</span><br>
+
+            <!-- Property binding for the mat badges -->
+<!-- If there are no notifications then the badge will be hidden -->
+            <span [matBadge] = "notification" matBadgeOverlap = "false" [matBadgeHidden] ="notification == 0">Property binding for notifications</span><br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- Mat icon example -->
+<mat-form-field>
+  <!-- without hash(i.e., "#ChipList" here) new items cannot be added -->
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor = 'let dish of dishes' [selectable]="selectable"
+    [removable]="removable" (removed)="remove(fruit)">
+      {{dish.name}}
+    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="New dish..."
+    [matChipInputFor]="chipList"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    [matChipInputAddOnBlur]="addOnBlur"
+    (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>
+
+<!-- Mat expansion panel example -->
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Age">
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,16 @@
+<p>third works! Font Awesome</p>
+
+<i class="fa fa-camera-retro fa-2x"></i> camera
+
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>Loading....
+<span class="sr-only">Loading...</span>
+
+<!-- Event handling -->
+<button class="fa fa-hand-pointer-o" aria-hidden="true" (click)="myClickFunction($event)">Click here</button>
+
+<!-- Changing values with dropdown button when the event occurs-->
+<div>Months: 
+<select (change) = changeMonth($event)>
+    <option *ngFor = "let month of months">{{month}}</option>
+</select>
+</div>

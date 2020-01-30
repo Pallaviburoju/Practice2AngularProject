@@ -1,0 +1,44 @@
+<p>first works!</p>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">EmpName</th>
+        <th scope="col">Department</th>
+        <th scope="col">Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let emp of empData, let i = index">
+        <ng-container  *ngIf = "emp.EmpName == 'Lavanya'">
+        <th>{{i+1}}</th>
+        <td>{{emp.EmpName}}</td>
+        <td>{{emp.Department}}</td>
+        <td>{{emp.Company}}</td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  
+ <!-- on click incrementing the val;ue in the badge -->
+
+  <button (click)="onclick()">click here</button> 
+
+  <p>Likes<span class ="badge"><strong>{{count}}</strong></span></p>
+
+  
+  <p>Addition is : {{ addTwoNumbers() }} </p>
+
+  <button (click)="afterlocalStrge()">After local storage</button>
+   <!-- <a routerLink="/second"> for MatBadge & angular material examples click here</a><br>
+   <a routerLink = "/third">For font awesome click here</a><br>
+   <a routerLink = "matNav">For angular Material navbar</a>
+   <div class= "row" style="align-items: center;">
+     <div class= "col">
+     <a routerLink= "/fourth"><button class= "btn btn-success btn-lg btn-block">Registration Form</button> </a>
+   </div>
+   <div class= "col">
+      <a routerLink= "/login"><button class= "btn btn-primary btn-lg btn-block">Login Page</button></a>
+    </div>  
+  </div>
+  -->
